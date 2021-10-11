@@ -2,7 +2,8 @@ import './App.css';
 // import {Switch, Route} from 'react-router-dom';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import Header from './components/header/header.component';
 
 const HatsPage = () => (
     <h1>hats page</h1>
@@ -47,8 +48,12 @@ function App() {
 
 
             <Router>
-                <Route exact path='/' component={HomePage}></Route>
-                <Route exact path='/shop' component={ShopPage}></Route>
+                <Header></Header>
+
+                <switch>
+                    <Route exact path='/' component={HomePage}></Route>
+                    <Route exact path='/shop' component={ShopPage}></Route>
+                </switch>
             </Router>
 
             {/*<Router>*/}
